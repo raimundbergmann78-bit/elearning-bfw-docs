@@ -1,25 +1,152 @@
-*{box-sizing:border-box}
-:root{--bg:#f4f6fa;--card:#fff;--fg:#1d2533;--muted:#5c6678;--line:#dde3ec;--accent:#1f4e79;--accent2:#2e75b6}
-@media (prefers-color-scheme:dark){:root{--bg:#11161d;--card:#1a222c;--fg:#e8edf4;--muted:#a3afbf;--line:#2b3644;--accent:#7fb2e5;--accent2:#4a90d0}}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-.kopf{max-width:760px;margin:0 auto;padding:28px 20px 8px}
-.logo{height:44px;width:auto;display:block;margin-bottom:14px}
-h1{font-size:1.65rem;line-height:1.2;margin:0 0 6px}
-.kopf p{margin:0;color:var(--muted)}
-main{max-width:760px;margin:0 auto;padding:8px 20px 32px}
-h2{font-size:1.05rem;margin:28px 0 10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-.feature{display:block;background:var(--accent);color:#fff;text-decoration:none;border-radius:14px;padding:18px;margin:18px 0 8px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-.feature-label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;opacity:.85}
-.feature strong{display:block;font-size:1.25rem;margin:4px 0}
-.feature-meta{font-size:.9rem;opacity:.9}
-.docs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.docs a{display:flex;align-items:center;gap:12px;background:var(--card);color:inherit;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:56px}
-.docs a:active{background:var(--line)}
-.num{flex:0 0 34px;height:34px;border-radius:9px;background:var(--accent2);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.85rem}
-.txt{flex:1;min-width:0}
-.txt strong{display:block;font-size:1rem;line-height:1.25}
-.txt small{display:block;color:var(--muted);font-size:.82rem;line-height:1.3;margin-top:2px}
-.meta{color:var(--muted);font-size:.8rem;white-space:nowrap}
-.hinweis{margin-top:24px;padding:12px 14px;border-left:3px solid var(--accent2);background:var(--card);color:var(--muted);font-size:.9rem;border-radius:0 8px 8px 0}
-footer{max-width:760px;margin:0 auto;padding:18px 20px 36px;color:var(--muted);font-size:.82rem;border-top:1px solid var(--line)}
+/* BFW E-Learning – ein Stylesheet für Lernbereich und Verwaltung */
+
+:root {
+  --blau: #1F4E79;
+  --bg: #f4f6f9;
+  --karte: #ffffff;
+  --text: #1d2430;
+  --grau: #5f6b7a;
+  --linie: #dde2e9;
+  --rot: #b3261e;
+  --gruen: #2e7d32;
+  --link: #1F4E79;
+  --schatten: 0 2px 10px rgba(0, 0, 0, .08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181f; --karte: #1e242d; --text: #e8ecf2; --grau: #a3adba;
+    --linie: #333c48; --link: #8fbbe8; --gruen: #66bb6a; --rot: #ef6f61;
+    --schatten: 0 2px 10px rgba(0, 0, 0, .45);
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.45; }
+a { color: var(--link); }
+button, input, select, textarea { font: inherit; }
+h1 { font-size: 26px; margin: 0 0 4px; }
+h2 { font-size: 19px; margin: 0 0 4px; }
+code { font-family: Consolas, monospace; font-size: 13px; }
+
+/* ---------- Kopf und Fuß ---------- */
+.kopfzeile { background: var(--blau); color: #fff; padding: 10px 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; position: sticky; top: 0; z-index: 5; }
+.logo { color: #fff; text-decoration: none; font-weight: 700; font-size: 20px; flex: 1; white-space: nowrap; }
+.logo img { height: 34px; width: auto; display: block; }
+.kopfzeile nav { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.kopfzeile nav a, .kopfzeile nav button { color: #fff; text-decoration: none; padding: 6px 12px; border-radius: 6px; opacity: .85; background: none; border: 0; cursor: pointer; }
+.kopfzeile nav a.aktiv { background: rgba(255, 255, 255, .18); opacity: 1; font-weight: 600; }
+.kopfzeile nav a:hover, .kopfzeile nav button:hover { opacity: 1; background: rgba(255, 255, 255, .12); }
+.wer { font-size: 14px; opacity: .85; margin-left: 8px; }
+form.inline { display: inline; margin: 0; }
+main { max-width: 1680px; margin: 0 auto; padding: 22px clamp(16px, 3vw, 48px) 40px; }
+footer { text-align: center; color: var(--grau); font-size: 13px; padding: 0 16px 30px; }
+.unterzeile { color: var(--grau); margin: 0 0 18px; }
+.hinweis { font-size: 13px; color: var(--grau); }
+.zurueck { display: inline-block; color: var(--link); text-decoration: none; font-weight: 600; margin-bottom: 12px; }
+
+/* ---------- Kacheln ---------- */
+/* auto-fit: vorhandene Kacheln verteilen sich auf die ganze Breite; einzelne Kachel höchstens 560 px */
+.kacheln { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(16px, 1.5vw, 24px); }
+.kacheln .kachel { max-width: 560px; }
+.kachel { display: block; background: var(--karte); border-radius: 12px; overflow: hidden; box-shadow: var(--schatten); color: inherit; text-decoration: none; transition: transform .15s; }
+a.kachel:hover, a.kachel:focus-visible { transform: translateY(-3px); outline: 3px solid var(--link); outline-offset: 2px; }
+.bild { aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; background: #7d8a9b; overflow: hidden; }
+.bild img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.buchstabe { color: #fff; font-size: 48px; font-weight: 700; }
+.kachel .info { padding: 10px 14px 14px; }
+.kachel h2 { font-size: 18px; overflow-wrap: break-word; }
+.kachel p { margin: 0 0 8px; font-size: 14px; color: var(--grau); }
+.kachel small { color: var(--grau); font-weight: 600; }
+.leer { text-align: center; color: var(--grau); padding: 40px 16px; border: 2px dashed var(--linie); border-radius: 12px; }
+
+/* ---------- Kategorie-Seite ---------- */
+.kopf { display: flex; gap: 18px; align-items: center; background: var(--karte); border-radius: 12px; overflow: hidden; box-shadow: var(--schatten); margin-bottom: 18px; flex-wrap: wrap; }
+.kopf .bild { width: 260px; max-width: 100%; }
+.kopf .text { padding: 14px; flex: 1; min-width: 220px; }
+.kopf p { margin: 6px 0 0; color: var(--grau); }
+.nuggets { display: grid; gap: 10px; }
+.nugget { display: flex; align-items: center; gap: 14px; background: var(--karte); border-radius: 10px; padding: 14px 16px; box-shadow: var(--schatten); flex-wrap: wrap; }
+.nugget .text { flex: 1; min-width: 200px; }
+.nugget p { margin: 2px 0 0; color: var(--grau); }
+
+/* ---------- Player ---------- */
+.player-leiste { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.nugget-rahmen { width: 100%; height: min(75vh, 680px); border: 1px solid var(--linie); border-radius: 10px; background: #fff; display: block; }
+
+/* ---------- Knöpfe ---------- */
+.knopf { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--linie); background: var(--karte); color: var(--text); padding: 8px 14px; border-radius: 8px; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.knopf:hover { border-color: var(--link); }
+.knopf.primaer { background: var(--blau); border-color: var(--blau); color: #fff; }
+.knopf.gefahr { color: var(--rot); }
+.knopf.gefahr-voll { background: var(--rot); border-color: var(--rot); color: #fff; }
+.knopf.klein { padding: 4px 10px; font-size: 14px; }
+.knopf:disabled { opacity: .5; cursor: progress; }
+
+/* ---------- Verwaltung ---------- */
+.karte { background: var(--karte); border-radius: 12px; box-shadow: var(--schatten); padding: 18px; margin-bottom: 18px; }
+.karte.schmal { max-width: 520px; margin: 20px auto; }
+.karte.formular { max-width: 860px; }
+.karte-kopf { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.tabelle-rahmen { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--linie); vertical-align: middle; }
+th { color: var(--grau); font-weight: 600; font-size: 13px; }
+td.knoepfe { white-space: nowrap; text-align: right; }
+.bild.mini { width: 72px; border-radius: 4px; }
+.bild.mini .buchstabe { font-size: 20px; }
+.meldung { padding: 10px 14px; border-radius: 8px; margin-bottom: 16px; border-left: 5px solid var(--gruen); background: #e8f3e8; background: color-mix(in srgb, var(--gruen) 12%, var(--karte)); }
+.meldung.fehler { border-color: var(--rot); background: #fbe9e7; background: color-mix(in srgb, var(--rot) 12%, var(--karte)); }
+.meldung.hinweis { border-color: var(--link); background: #e8eef7; background: color-mix(in srgb, var(--link) 12%, var(--karte)); }
+
+/* ---------- Formulare ---------- */
+label.feld { display: block; font-weight: 600; margin-bottom: 14px; }
+label.feld input:not([type=file]), label.feld textarea, label.feld select { display: block; width: 100%; margin-top: 6px; padding: 9px 12px; border: 1px solid var(--linie); border-radius: 8px; background: var(--bg); color: var(--text); font-weight: 400; }
+label.feld input[type=file] { display: block; margin-top: 6px; font-weight: 400; }
+label.feld textarea { min-height: 80px; resize: vertical; }
+label.haken { display: block; margin: -6px 0 14px; }
+input:focus-visible, textarea:focus-visible, select:focus-visible, .knopf:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+.zwei { display: grid; grid-template-columns: 1fr 250px; gap: 22px; }
+@media (max-width: 700px) { .zwei { grid-template-columns: 1fr; } }
+.vorschau > span { display: block; font-size: 13px; color: var(--grau); margin-bottom: 6px; }
+.formular-fuss { display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--linie); }
+.handy-tipp { display: none; }
+
+/* ---------- Handy und schmale Fenster ---------- */
+@media (max-width: 700px) {
+  /* Kopfzeile kompakt und nicht mehr „klebend“, damit sie keinen Platz blockiert */
+  .kopfzeile { position: static; padding: 8px 12px; gap: 2px; }
+  .logo { flex-basis: 100%; font-size: 18px; }
+  .logo img { height: 28px; }
+  .kopfzeile nav { width: 100%; }
+  .kopfzeile nav a, .kopfzeile nav button { padding: 8px 10px; }
+  .wer { display: none; }
+  main { padding: 16px 12px 32px; }
+  h1 { font-size: 22px; }
+  .karte { padding: 14px; }
+  .karte.schmal { margin: 8px auto; }
+
+  /* Größere Tippflächen für Finger */
+  .knopf, .knopf.klein { min-height: 42px; padding: 8px 14px; font-size: 15px; justify-content: center; }
+  .nugget .knopf { width: 100%; }
+  .formular-fuss { flex-wrap: wrap; }
+  .formular-fuss .knopf { flex: 1 1 auto; }
+
+  /* Tabellen der Verwaltung werden zu Karten – alle Knöpfe ohne seitliches Wischen erreichbar */
+  .tabelle-rahmen { overflow: visible; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  thead { display: none; }
+  tr { border: 1px solid var(--linie); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; }
+  td { border: 0; padding: 3px 0; }
+  td[data-label]::before { content: attr(data-label) ": "; color: var(--grau); font-size: 13px; }
+  td.knoepfe { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 10px; text-align: left; white-space: normal; }
+  td.knoepfe .knopf { flex: 1 1 auto; }
+  .bild.mini { width: 96px; }
+  code { overflow-wrap: anywhere; }
+
+  /* Kategorie-Kopf und Player */
+  .kopf .bild { width: 100%; }
+  .nugget-rahmen { height: auto; aspect-ratio: 4 / 3; max-height: 75vh; }
+}
+@media (max-width: 700px) and (orientation: portrait) {
+  .handy-tipp { display: block; font-size: 14px; color: var(--grau); margin: 8px 0 0; }
+}
