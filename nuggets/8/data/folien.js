@@ -1,0 +1,1 @@
+const FOLIEN=[["SQL – SELECT und WHERE", "Basisausbildung · Datenbanken"], ["SELECT", "SELECT name FROM kategorie;", "* heißt: alle Spalten"], ["WHERE", "SELECT * FROM nugget WHERE kategorie_id = 2;", "Mehrere Bedingungen mit AND / OR"]];

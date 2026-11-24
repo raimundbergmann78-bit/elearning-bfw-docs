@@ -1,0 +1,1 @@
+const FOLIEN=[["Jugendarbeitsschutzgesetz", "Basisausbildung · WiSo"], ["Arbeitszeit", "Höchstens 8 Stunden am Tag", "Höchstens 40 Stunden pro Woche"], ["Pausen", "Mehr als 4,5 Std.: 30 Min.", "Mehr als 6 Std.: 60 Min."]];

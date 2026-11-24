@@ -1,0 +1,1 @@
+const FOLIEN=[["Normalisierung (1NF bis 3NF)", "Basisausbildung · Datenbanken"], ["1. Normalform", "Jedes Feld enthält nur einen Wert", "Keine Listen in einer Zelle"], ["2. und 3. Normalform", "2NF: alles hängt am ganzen Schlüssel", "3NF: keine Abhängigkeit über Umwege"]];

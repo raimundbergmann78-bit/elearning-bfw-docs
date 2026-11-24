@@ -1,0 +1,1 @@
+const FOLIEN=[["Das OSI-Modell", "Basisausbildung · Netzwerktechnik"], ["Sieben Schichten", "7 Anwendung … 1 Bitübertragung", "Jede Schicht hat eine Aufgabe"], ["Beispiele", "Schicht 3: IP, Router", "Schicht 2: MAC, Switch"]];

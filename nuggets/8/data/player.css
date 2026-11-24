@@ -1,0 +1,10 @@
+body{margin:0;font-family:Segoe UI,sans-serif;background:#2b2f36;height:100vh;display:flex;flex-direction:column}
+.folie{flex:1;margin:14px 14px 0;background:#fff;border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.t{background:#1F4E79;color:#fff;padding:18px 28px;font-size:26px;font-weight:700}
+ul{font-size:20px;line-height:1.7;padding:20px 50px}
+.start{justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#1F4E79,#10263d);color:#fff}
+.start h1{font-size:36px;margin:0 20px 10px}.start p{opacity:.8;margin:0}
+.leiste{display:flex;align-items:center;gap:12px;padding:10px 14px;color:#cfd6df;font-size:14px}
+.leiste button{background:#444b55;color:#fff;border:0;border-radius:5px;padding:7px 14px;cursor:pointer}
+.leiste button:disabled{opacity:.4}.balken{flex:1;height:5px;background:#444b55;border-radius:3px}
+.balken div{height:100%;background:#E08A2C;border-radius:3px}

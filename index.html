@@ -4,37 +4,80 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#1F4E79">
-<title>Projektunterlagen – BFW E-Learning</title>
+<title>Ausbildungsbereiche – BFW E-Learning</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css?v=2">
-<link rel="stylesheet" href="docs.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="docs.css?v=3">
 </head>
 <body>
 <header class="kopfzeile">
-  <a class="logo" href="index.html?v=2"><img src="assets/logo-kopf.svg" alt="BFW E-Learning – zur Startseite"></a>
+  <a class="logo" href="index.html?v=3"><img src="assets/logo-kopf.svg" alt="BFW E-Learning – zur Startseite"></a>
   <nav aria-label="Hauptmenü">
-    <a href="index.html?v=2" class="aktiv">Projektunterlagen</a>
-    <a href="unterlagen.html?v=2">PDFs</a>
+    <a href="index.html?v=3" class="aktiv">Lernbereich</a>
+    <a href="verwaltung.html?v=3" class="">Verwaltung</a>
+    <a href="unterlagen.html?v=3" class="">Unterlagen</a>
   </nav>
 </header>
 <main>
-  <div class="schmal">
-    <h1>Projektunterlagen</h1>
-    <p class="unterzeile">E-Learning-Plattform für die Basisausbildung · FIAE-Projektwoche</p>
+  <h1>Ausbildungsbereiche</h1>
+  <p class="unterzeile">Wähle einen Bereich und starte ein Lern-Nugget.</p>
 
-    <div class="kacheln einzel">
-      <a class="kachel" href="unterlagen.html?v=2">
-        <div class="bild"><img src="assets/team.svg" alt="Hoch, Hass, Bergmann – Projektunterlagen"></div>
+  <div class="kacheln">
+      <a class="kachel" href="kategorie-1.html">
+        <div class="bild"><img src="uploads/kategorien/bdb59dafb2fdced750dde4fd5bec186c.png" alt=""></div>
         <div class="info">
-          <h2>Hoch, Hass, Bergmann</h2>
-          <p>Checkliste, Dokumentation und Projektunterlagen</p>
-          <small>11 PDFs</small>
+          <h2>Datenbanken</h2>
+          <p>ER-Modell, SQL und Normalisierung</p>
+          <small>3 Nuggets</small>
         </div>
       </a>
-    </div>
-
-    <p class="hinweis">Tippe auf die Kachel, um die Unterlagen zu öffnen.</p>
+      <a class="kachel" href="kategorie-2.html">
+        <div class="bild"><img src="uploads/kategorien/fdae884f8ba57bf9772db2129d440d38.png" alt=""></div>
+        <div class="info">
+          <h2>Netzwerktechnik</h2>
+          <p>OSI-Modell, IP-Adressen und Subnetting</p>
+          <small>2 Nuggets</small>
+        </div>
+      </a>
+      <a class="kachel" href="kategorie-3.html">
+        <div class="bild"><img src="uploads/kategorien/81626afd7dec9c42744e1bd548a197c3.png" alt=""></div>
+        <div class="info">
+          <h2>Wirtschaft &amp; Soziales</h2>
+          <p>Ausbildung, Arbeitsrecht und Betrieb</p>
+          <small>1 Nugget</small>
+        </div>
+      </a>
+      <a class="kachel" href="kategorie-4.html">
+        <div class="bild"><img src="uploads/kategorien/84ed4c86455cf46129b3cd3a0b0d53a5.png" alt=""></div>
+        <div class="info">
+          <h2>Programmierung</h2>
+          <p>Grundlagen in C# und Python</p>
+          <small>1 Nugget</small>
+        </div>
+      </a>
   </div>
+
+  <h2 class="abschnitt">Projektunterlagen</h2>
+  <div class="kacheln einzel">
+    <a class="kachel" href="unterlagen.html?v=3">
+      <div class="bild"><img src="assets/team.svg" alt="Hoch, Hass, Bergmann – Projektunterlagen"></div>
+      <div class="info">
+        <h2>Hoch, Hass, Bergmann</h2>
+        <p>Checkliste, Dokumentation und Projektunterlagen</p>
+        <small>11 PDFs</small>
+      </div>
+    </a>
+  </div>
+
+  <h2 class="abschnitt">Verwaltung</h2>
+  <a class="feature" href="verwaltung.html?v=3">
+    <span class="label">Admin-Bereich</span>
+    <strong>Verwaltung ansehen</strong>
+    <span>Anmeldung, Kategorien, Nuggets und Passwort – als Vorschau</span>
+  </a>
+
+  <p class="hinweis">Vorschau der Plattform. Lernmodule und Verwaltung laufen im Original mit PHP und SQLite.</p>
+
 </main>
 <footer>BFW Nürnberg · Basisausbildung · E-Learning-Plattform</footer>
 </body>

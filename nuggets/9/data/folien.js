@@ -1,0 +1,1 @@
+const FOLIEN=[["IPv4 Subnetting", "Basisausbildung · Netzwerktechnik"], ["Subnetzmaske", "/24 = 255.255.255.0", "254 nutzbare Hosts", "Netz- und Broadcast-Adresse abziehen"]];

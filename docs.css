@@ -31,3 +31,6 @@
   .pdf { padding: 12px 14px; }
   .pdf .meta { font-size: 12px; }
 }
+
+.karte .shot { width: 100%; height: auto; display: block; border-radius: 10px;
+  border: 1px solid var(--linie); margin: 10px 0 8px; }

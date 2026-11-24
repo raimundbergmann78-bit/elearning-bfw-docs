@@ -1,0 +1,1 @@
+const FOLIEN=[["ER-Modell Grundlagen", "Basisausbildung · Datenbanken"], ["Was ist ein ERM?", "Plan der Daten vor dem Programmieren", "Entitäten, Attribute, Beziehungen"], ["Beziehungen", "1:1 – Person und Ausweis", "1:n – Kategorie und Nuggets", "m:n – braucht eine Zwischentabelle"]];

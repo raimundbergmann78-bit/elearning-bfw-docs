@@ -1,0 +1,1 @@
+const FOLIEN=[["C# Grundlagen", "Basisausbildung · Programmierung"], ["Variablen", "int alter = 25;", "string name = \"Max\";"], ["Verzweigung", "if (alter >= 18) { … } else { … }"]];
