@@ -34,3 +34,10 @@
 
 .karte .shot { width: 100%; height: auto; display: block; border-radius: 10px;
   border: 1px solid var(--linie); margin: 10px 0 8px; }
+
+.video { width: 100%; height: auto; display: block; border-radius: 12px;
+  box-shadow: var(--schatten); background: #000; margin: 12px 0; }
+
+@media (max-width: 480px) {
+  .kopfzeile nav a { padding: 8px 7px; font-size: 14px; }
+}
