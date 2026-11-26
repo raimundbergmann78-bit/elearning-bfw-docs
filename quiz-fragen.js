@@ -176,6 +176,9 @@ window.QUIZ_FRAGEN = [
   { teil: "hass", folie: "Zusatzfolie 17", q: "Warum steht in src/db.php „PRAGMA foreign_keys = ON“?",
     a: ["SQLite prüft Fremdschlüssel sonst gar nicht", "Damit SQLite schneller speichern kann", "Damit mehrere Admins gleichzeitig arbeiten", "Weil PHP 8 das für jede Datenbank verlangt"],
     e: "Ohne diese Zeile könnte ein Nugget auf eine Kategorie zeigen, die es nicht gibt. Die Verbindung wird pro Seitenaufruf nur einmal aufgebaut." },
+  { teil: "hass", folie: "Zusatzfolie 18", q: "Welcher Nachteil von SQLite stimmt?",
+    a: ["Es kann immer nur einer gleichzeitig schreiben", "Man braucht immer einen eigenen Datenbankserver", "Die Datenbank lässt sich nicht einfach sichern", "SQLite kann keine Fremdschlüssel speichern"],
+    e: "Darum wartet busy_timeout bis zu 5 Sekunden. Für uns kein Problem: Nur ein Admin schreibt. Fremdschlüssel gehen, müssen aber mit PRAGMA foreign_keys = ON eingeschaltet werden." },
 
   // ---------------- BERGMANN · Folien 12–16 ----------------
   { teil: "bergmann", folie: "Folie 12", q: "Wie viele Schutzmaßnahmen nennt euer Sicherheitskonzept?",
