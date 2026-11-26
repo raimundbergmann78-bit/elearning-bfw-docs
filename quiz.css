@@ -1,0 +1,55 @@
+/* Quiz zur Projektpräsentation – Farben je Teil: Hoch blau, Hass orange, Bergmann grün */
+.teil-hoch     { --teil: #1E88E5; }
+.teil-hass     { --teil: #F57C00; }
+.teil-bergmann { --teil: #2E7D32; }
+
+.legende { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 18px; }
+.marke { display: inline-block; background: var(--teil); color: #fff; font-weight: 700; font-size: 13px;
+  border-radius: 6px; padding: 3px 10px; }
+
+.quiz-karte { background: var(--karte); border-radius: 12px; box-shadow: var(--schatten);
+  border-left: 8px solid var(--teil, var(--blau)); padding: 18px 20px; margin-bottom: 16px; }
+.quiz-kopf { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+  font-size: 14px; color: var(--grau); margin-bottom: 10px; }
+.quiz-frage { font-size: 20px; line-height: 1.35; margin: 4px 0 16px; }
+
+.fortschritt { height: 8px; background: var(--linie); border-radius: 4px; overflow: hidden; margin: 0 0 16px; }
+.fortschritt div { height: 100%; width: 0; background: var(--teil, var(--blau)); transition: width .2s; }
+
+.antworten { display: grid; gap: 10px; }
+.antwort { display: flex; gap: 12px; align-items: flex-start; width: 100%; text-align: left;
+  background: var(--bg); color: var(--text); border: 2px solid var(--linie); border-radius: 10px;
+  padding: 12px 14px; cursor: pointer; font-size: 16px; line-height: 1.35; }
+.antwort:hover:not(:disabled) { border-color: var(--teil); }
+.antwort:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+.antwort:disabled { cursor: default; }
+.antwort .buchstabe-klein { flex: 0 0 28px; height: 28px; border-radius: 7px; display: grid; place-items: center;
+  background: var(--linie); color: var(--text); font-weight: 700; font-size: 14px; }
+.antwort.richtig { border-color: var(--gruen); background: color-mix(in srgb, var(--gruen) 14%, var(--karte)); }
+.antwort.falsch  { border-color: var(--rot);   background: color-mix(in srgb, var(--rot) 14%, var(--karte)); }
+.antwort.richtig .buchstabe-klein { background: var(--gruen); color: #fff; }
+.antwort.falsch  .buchstabe-klein { background: var(--rot); color: #fff; }
+
+.erklaerung { margin-top: 14px; padding: 10px 14px; border-radius: 8px; border-left: 5px solid var(--teil);
+  background: color-mix(in srgb, var(--teil) 10%, var(--karte)); }
+.erklaerung strong { display: block; margin-bottom: 2px; }
+.quiz-fuss { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+.ergebnis-zahl { font-size: 44px; font-weight: 800; margin: 4px 0; }
+.teil-zeilen { display: grid; gap: 8px; margin: 14px 0; }
+.teil-zeile { display: grid; grid-template-columns: 110px 1fr 70px; gap: 10px; align-items: center; }
+.teil-zeile .balken { height: 14px; background: var(--linie); border-radius: 7px; overflow: hidden; }
+.teil-zeile .balken div { height: 100%; background: var(--teil); }
+.teil-zeile .zahl { text-align: right; font-weight: 600; }
+
+.fehler-liste { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
+.fehler-liste li { border-left: 6px solid var(--teil); background: var(--bg); border-radius: 8px; padding: 8px 12px; }
+.fehler-liste small { color: var(--grau); }
+
+.optionen { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 14px; }
+
+@media (max-width: 700px) {
+  .quiz-frage { font-size: 18px; }
+  .antwort { font-size: 15px; }
+  .teil-zeile { grid-template-columns: 90px 1fr 60px; }
+}
