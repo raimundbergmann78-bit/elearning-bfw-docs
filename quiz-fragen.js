@@ -164,6 +164,18 @@ window.QUIZ_FRAGEN = [
   { teil: "hass", folie: "Grenzen", q: "Wie groß darf ein hochgeladenes ZIP höchstens sein?",
     a: ["200 MB", "2 MB", "20 MB", "2.000 MB"],
     e: "ZIP max. 200 MB, Bild max. 2 MB, Abmeldung nach 60 Minuten." },
+  { teil: "hass", folie: "Zusatzfolie 17", q: "Wie speichert ihr neue Daten in SQLite (INSERT)?",
+    a: ["prepare() mit ?, dann execute([...]), dann lastInsertId()",
+        "SQL-Text mit den Eingaben zusammenkleben und ausführen",
+        "Die Werte direkt in die SQLite-Datei schreiben lassen",
+        "Jede Eingabe mit htmlspecialchars() in das SQL setzen"],
+    e: "Prepared Statement: Das SQL enthält nur Platzhalter (?), die Werte kommen getrennt über execute([...]). Eingaben stehen nie im SQL-Text → keine SQL-Injection." },
+  { teil: "hass", folie: "Zusatzfolie 17", q: "Was liefert lastInsertId() nach einem INSERT?",
+    a: ["Die ID der neuen Zeile in der Tabelle", "Die Anzahl aller Zeilen in der Tabelle", "Die Uhrzeit des letzten Speicherns", "Das zuletzt eingegebene Passwort"],
+    e: "PDO gibt die neue ID als Text zurück – mit (int) wird daraus eine Zahl, z. B. return (int) db()->lastInsertId();" },
+  { teil: "hass", folie: "Zusatzfolie 17", q: "Warum steht in src/db.php „PRAGMA foreign_keys = ON“?",
+    a: ["SQLite prüft Fremdschlüssel sonst gar nicht", "Damit SQLite schneller speichern kann", "Damit mehrere Admins gleichzeitig arbeiten", "Weil PHP 8 das für jede Datenbank verlangt"],
+    e: "Ohne diese Zeile könnte ein Nugget auf eine Kategorie zeigen, die es nicht gibt. Die Verbindung wird pro Seitenaufruf nur einmal aufgebaut." },
 
   // ---------------- BERGMANN · Folien 12–16 ----------------
   { teil: "bergmann", folie: "Folie 12", q: "Wie viele Schutzmaßnahmen nennt euer Sicherheitskonzept?",
